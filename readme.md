@@ -6,7 +6,7 @@ A basic REST API returning the definition of a word as a JSON response.
 In order to resolve the anagram, the table receives an index on the
 anagram column. Anagram will be stored with their letters sorted.
 for example, "wolf", "flow" and "fowl" will all receives the anagram "flow".
-This allows an instant matching instead of using costly permutations O(n!). see the [DictionaryEntry init](https://github.com/debrice/oxford/blob/master/oxford/models.py#L11) and [dictionary get_anagrams](https://github.com/debrice/oxford/blob/master/oxford/dictionary.py#L22) for more details.
+This allows an instant matching instead of using costly permutations O(n!). see the [DictionaryEntry init](https://github.com/debrice/oxford/blob/master/oxford/models.py#L17) and [dictionary get_anagrams](https://github.com/debrice/oxford/blob/master/oxford/dictionary.py#L28) for more details.
 
 
 I've decided to use SQL-Alchemy as it offers more options on the storage
