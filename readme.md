@@ -9,7 +9,7 @@ for example, "wolf", "flow" and "fowl" will all receives the anagram "flow".
 This allows an instant matching instead of using costly permutations O(n!). see the [DictionaryEntry init](https://github.com/debrice/oxford/blob/master/oxford/models.py#L11) and [dictionary get_anagrams](https://github.com/debrice/oxford/blob/master/oxford/dictionary.py#L22) for more details.
 
 
-I've decided to use SQL-Alchemy as it offesr more options on the storage
+I've decided to use SQL-Alchemy as it offers more options on the storage
 medium (postgres, mysql, sqlite). Relational databases are a better
 storage strategy for the current use (word lookup) than Elastic
 Search (expensive "index all" behavior).
@@ -100,13 +100,13 @@ Commands:
 
 ## Testing
 
-Use nose for testing, the root folder of the app, type:
+Use nose for testing, at the root folder of the app, type:
 
 ```sh
 nosetests
 ```
 
-to display the code coverage use nose-cov
+to display the code coverage I use nose-cov
 
 ```sh
 nosetests --with-cov --cov-report term-missing --cov oxford
