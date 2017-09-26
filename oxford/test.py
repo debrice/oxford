@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+    test
+    ~~~~
+    Test base class for oxford unitest with some fixtures.
+"""
 import unittest
 from oxford import create_app
 from oxford.models import DictionaryEntry
@@ -8,6 +14,7 @@ class TestCase(unittest.TestCase):
     def setUp(self):
         self.app = create_app(config_filename='test_config.py')
 
+        # Add a few fixtures for the tests
         with self.app.app_context():
             self.client = self.app.test_client()
             db.create_all()
@@ -19,4 +26,5 @@ class TestCase(unittest.TestCase):
 
     def tearDown(self):
         with self.app.app_context():
+            # flush the db after every test
             db.drop_all()

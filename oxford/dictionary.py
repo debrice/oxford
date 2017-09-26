@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+    Dictionary
+    ~~~~~~~~~~
+    Abstraction layer between the API and the db models.
+"""
 from oxford.models import DictionaryEntry
 from oxford import db
 from sqlalchemy import and_

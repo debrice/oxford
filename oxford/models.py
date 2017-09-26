@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+    models
+    ~~~~~~
+    The db models composing the Oxford dictionary.
+"""
 from oxford import db
 
 

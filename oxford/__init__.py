@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+    oxford
+    ~~~~~~
+    this module contains the Oxford Rest API logic powered by Flask.
+"""
 from flask import Flask
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
@@ -12,7 +18,8 @@ def create_app(config_filename):
     db.init_app(app)
     api = Api(app)
 
-    from oxford.endpoints import HelloWorld
-    api.add_resource(HelloWorld, '/')
+    # loads the root search endpoint "/?word=wolf"
+    from oxford.endpoints import OxfordDictionaryAPI
+    api.add_resource(OxfordDictionaryAPI, '/')
 
     return app
