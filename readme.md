@@ -4,19 +4,21 @@ A basic REST API returning the definition of a word as a JSON response.
 
 
 In order to resolve the anagram, the table receives an index on the
-anagram column. Anagram will be stored sorted. This allows an instant
-matching instead of using costly permutations O(n!).
+anagram column. Anagram will be stored with their letters sorted.
+for example, "wolf", "flow" and "fowl" will all receives the anagram "flow".
+This allows an instant matching instead of using costly permutations O(n!). see the [DictionaryEntry init](https://github.com/debrice/oxford/blob/master/oxford/models.py#L11) and [dictionary get_anagrams](https://github.com/debrice/oxford/blob/master/oxford/dictionary.py#L22) for more details.
 
 
-I've decided to use SQL-Alchemy as gives flexibility on the storage
-medium (postgres, mysql, sqlite). Relational database are a better
-storage for the current use (word lookup) than Elastic Search because
-of its expensive "index all" behavior.
+I've decided to use SQL-Alchemy as it offesr more options on the storage
+medium (postgres, mysql, sqlite). Relational databases are a better
+storage strategy for the current use (word lookup) than Elastic
+Search (expensive "index all" behavior).
 
 
 ## Example
 
-```$ curl http://127.0.0.1:5000/?word=flow  | jq
+```
+$ curl http://127.0.0.1:5000/?word=flow  | jq
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   634  100   634    0     0   225k      0 --:--:-- --:--:-- --:--:--  309k
